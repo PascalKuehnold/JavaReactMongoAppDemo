@@ -6,6 +6,7 @@ import "./App.css";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Layout from "./components/Layout";
+import NotFound from "./components/notFound/NotFound";
 import Reviews from "./components/reviews/Reviews";
 import Trailer from "./components/trailer/Trailer";
 
@@ -19,8 +20,6 @@ function App() {
       const response = await api.get("/api/v1/movies");
 
       setMovies(response.data);
-
-     
     } catch (err) {
       console.log(err);
     }
@@ -28,14 +27,15 @@ function App() {
 
   const getMovieData = async (movieId) => {
     try {
-      const response = await api.get(`/api/v1/movies`, {params: {imdbId: movieId}});
+      const response = await api.get(`/api/v1/movies`, {
+        params: { imdbId: movieId },
+      });
 
       const singleMovie = response.data;
 
       setMovie(singleMovie);
 
       setReviews(singleMovie.reviews);
-      
     } catch (error) {
       console.log(error);
     }
@@ -63,6 +63,7 @@ function App() {
               />
             }
           ></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>
     </div>
