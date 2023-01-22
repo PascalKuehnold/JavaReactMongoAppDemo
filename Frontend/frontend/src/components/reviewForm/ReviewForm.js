@@ -2,25 +2,24 @@ import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 const ReviewForm = ({ handleSubmit, labelText, defaultValue }) => {
-  const [reviewText, setReviewText] = useState(""); 
+  const [reviewText, setReviewText] = useState("");
   const [showError, setShowError] = useState(false);
 
   function onSubmitHandler(e) {
     e.preventDefault();
 
-    if(reviewText.trim() === ""){
-      setReviewText(reviewText.trim())
+    if (reviewText.trim() === "") {
+      setReviewText(reviewText.trim());
       setShowError(true);
       return;
     }
 
-    handleSubmit(reviewText.trim())
+    handleSubmit(reviewText.trim());
 
     setReviewText("");
     setShowError(false);
   }
 
-  
   return (
     <Form>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">

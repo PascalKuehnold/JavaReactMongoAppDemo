@@ -14,7 +14,6 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
   }, []);
 
   const addReview = async (rev) => {
-
     try {
       const response = await api.post("/api/v1/reviews", {
         reviewBody: rev,
@@ -59,9 +58,7 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
             </>
           }
           {reviews?.map((review) => {
-            return (
-              <Review review={review} key={reviews.indexOf(review)}/>
-            );
+            return <Review review={review} key={reviews.indexOf(review)} />;
           })}
         </Col>
       </Row>
