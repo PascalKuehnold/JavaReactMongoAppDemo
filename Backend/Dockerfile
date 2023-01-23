@@ -1,10 +1,3 @@
-# FROM eclipse-temurin:17-jdk-jammy
-# EXPOSE 8080
-# ADD target/demo-app.jar demo-app.jar
-# ENTRYPOINT [ "java", "-jar", "/demo-app.jar" ]
-
-
-
 FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
@@ -22,4 +15,11 @@ RUN /bin/sh mvnw dependency:resolve
 COPY src ./src
 
 CMD ["./mvnw", "spring-boot:run"]
+
+
+# FROM eclipse-temurin:17-jdk-jammy
+# EXPOSE 8080
+# ADD target/demo-app.jar demo-app.jar
+# ENTRYPOINT [ "java", "-jar", "/demo-app.jar" ]
+
 
