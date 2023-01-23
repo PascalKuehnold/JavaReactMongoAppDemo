@@ -37,7 +37,6 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: pascalk7/demo
-        tags: latest
         registry: docker.io
         dockerfile: Backend/Dockerfile
         username: ${{secrets.DOCKER_USERNAME}}
