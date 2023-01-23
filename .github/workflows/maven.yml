@@ -31,7 +31,7 @@ jobs:
       run: mvn -B package --file Backend/pom.xml
       
     - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build/push@v4
+      uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: pascalk7/demo-app
         registry: docker.io
