@@ -35,6 +35,6 @@ jobs:
       with:
         image: pascalk7/demo-app
         registry: docker.io
-        dockerfile: Dockerfile
+        dockerfile: Backend/Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
