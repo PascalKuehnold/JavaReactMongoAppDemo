@@ -28,6 +28,11 @@ jobs:
         distribution: 'microsoft'
         cache: maven
     - name: Build with Maven
+      env:
+        MONGO_DATABASE: ${{secrets.MONGO_DATABASE}}
+        MONGO_USER: ${{secrets.MONGO_USER}}
+        MONGO_PASSWORD: ${{secrets.MONGO_PASSWORD}}
+        MONGO_CLUSTER: ${{secrets.MONGO_CLUSTER}}
       run: mvn -B package --file Backend/pom.xml
       
     - name: Build and Push Docker Image
