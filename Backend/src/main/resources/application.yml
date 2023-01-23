@@ -1,0 +1,21 @@
+server:
+  servlet:
+    context-path: /api
+
+spring:
+  data:
+    mongodb:
+      database: ${MONGO_DATABASE}
+      username: ${MONGO_USERNAME}
+      password: ${MONGO_PASSWORD}
+      uri: mongodb+srv://${spring.data.mongodb.username}:${spring.data.mongodb.password}@$cluster0.dbvpsvf.mongodb.net
+
+
+#
+#spring:
+#  data:
+#    mongodb:
+#      database: movie-api-db
+#      username: Kalle
+#      password: R9r1JJeanaVLw7zo
+#      uri: mongodb+srv://${spring.data.mongodb.username}:${spring.data.mongodb.password}@$cluster0.dbvpsvf.mongodb.net

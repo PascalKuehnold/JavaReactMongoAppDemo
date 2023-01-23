@@ -7,7 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JavaReactMongoDemoAppApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(JavaReactMongoDemoAppApplication.class, args);
+
+        String envVar = System.getenv().get("spring.data.mongodb.database");
+
+        System.out.println(envVar);
     }
+
 
 }
