@@ -12,7 +12,7 @@ COPY Backend/pom.xml ./
 # # run with the SH path
 # RUN /bin/sh mvnw dependency:resolve
 
-COPY src ./src
+COPY Backend/src ./src
 
 CMD ["./mvnw", "spring-boot:run"]
 
