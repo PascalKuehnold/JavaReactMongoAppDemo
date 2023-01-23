@@ -15,7 +15,7 @@ COPY Backend/mvnw ./
 
 COPY Backend/src ./src
 
-CMD ["./mvnw", "spring-boot:run"]
+CMD ["mvnw", "spring-boot:run"]
 
 
 # FROM eclipse-temurin:17-jdk-jammy
