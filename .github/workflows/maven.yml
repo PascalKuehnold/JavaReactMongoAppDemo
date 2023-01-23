@@ -24,8 +24,11 @@ jobs:
     steps:
     - name: Adding secret
       run: |
-        echo $MONGO_USER >> Backend/src/main/resources/application.properties
-        cat Backend/src/main/resources/application.properties
+        echo $DEV_PROP_FILE >> src/main/resources/application.properties
+        cat src/main/resources/application.properties
+      shell: bash
+      env:
+        DEV_PROP_FILE: ${{secrets.MONGO_USER}}
     - uses: actions/checkout@v3
     - name: Set up JDK 17
       uses: actions/setup-java@v3
