@@ -24,8 +24,8 @@ jobs:
     steps:
     - name: Adding secret
       run: |
-        echo $DEV_PROP_FILE >> src/main/resources/application.properties
-        cat src/main/resources/application.properties
+        echo $DEV_PROP_FILE >> Backend/src/main/resources/application.properties
+        cat Backend/src/main/resources/application.properties
       shell: bash
       env:
         DEV_PROP_FILE: ${{secrets.MONGO_USER}}
